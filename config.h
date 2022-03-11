@@ -16,13 +16,13 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
-static const char dmenufont[]       = "Monaco:size=8";
+static const char dmenufont[]       = "monospace:size=8";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#770000";
-static char selbgcolor[]            = "#005577";
+static char selbgcolor[]            = "#c96363";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -157,7 +157,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_Tab,		view,		{0} },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD("emacs") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD("emacsclient -c -a \"\"") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("$term -e $FILEMGR") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,	        SHCMD("kill $(pidof dwm)") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} },
